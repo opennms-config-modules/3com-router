@@ -1,0 +1,29 @@
+# 3Com Router
+
+OpenNMS configuration module for 3com router devices
+
+WARNING: This configuration is incomplete, RRD graph definitions are missing.
+
+## Installation
+
+.Download and install from GitHub
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/modules-available
+git clone https://github.com/opennms-config-modules/3com-router.git
+----
+
+### Datacollection
+
+.Install datacollection configuration
+[source, bash]
+----
+cd $OPENNMS_HOME/etc/datacollection
+ln -s ../modules-available/3com-router/datacollection/*.xml .
+----
+
+.Include in datacollection-config.xml
+[source, xml]
+----
+<include-collection dataCollectionGroup="3Com-Router"/>
+----
